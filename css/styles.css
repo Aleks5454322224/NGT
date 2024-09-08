@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+header {
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+}
+
+.main-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    width: 150px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #005b96;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.phone-city {
+    text-align: right;
+}
+
+.whatsapp-icon {
+    font-size: 24px;
+    color: #25D366;
+    text-decoration: none;
+}
+
+.whatsapp-icon:hover {
+    color: #128C7E;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.5);
+}
+
+@media (max-width: 1200px) {
+    .main-nav {
+        display: none;
+    }
+}
+
+/* Main section */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Расстояние между блоками */
+    padding: 20px;
+}
+
+/* Стили для секции hero */
+.hero {
+    background-image: url('https://vbashkortostane.gazprom.ru/d/textpage/68/104/shumnov-3016.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: darken;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #e1eff6;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #cfd8dc;
+}
+
+.hero a.btn {
+    display: inline-block;
+    padding: 12px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.hero a.btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.5);
+}
+
+/* Общие стили для секций */
+section {
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Стили для контейнеров внутри секций */
+section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Стили для блока предложений */
+.offers {
+    background-color: #f0f8ff;
+}
+
+.offer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.offer p {
+    margin: 10px 0;
+}
+
+.offer .btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Стили для блока заключения договора */
+.contract {
+    background-color: #f8f8f8;
+}
+
+.contract h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contract ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contract li {
+    margin-bottom: 10px;
+}
+
+/* Стили для блока основных этапов работы */
+.work-steps {
+    background-color: #f0f8ff;
+}
+
+.work-steps h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.work-steps ul {
+    list-style: none;
+    padding: 0;
+}
+
+.work-steps li {
+    margin-bottom: 10px;
+}
+
+/* Стили для блока газификации домов */
+.gasification {
+    background-color: #f8f8f8;
+}
+
+.gasification h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.gasification p {
+    margin: 10px 0;
+}
+
+.gasification .btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Стили для блока преимуществ компании */
+.benefits {
+    background-color: #f0f8ff;
+}
+
+.benefits h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits li {
+    margin-bottom: 10px;
+}
+
+/* Стили для блока контактов */
+.contact {
+    background-color: #f8f8f8;
+}
+
+.contact h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+.contact a.btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Footer section */
+footer {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    padding: 40px 0;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-section {
+    flex: 1 1 30%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    margin-bottom: 15px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-nav a {
+    color: #ECF0F1;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #ECF0F1;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #3498DB;
+}
+
+@media (max-width: 992px) {
+    .footer-section {
+        flex: 1 1 45%;
+        margin-bottom: 30px;
+    }
+
+    .social-icons {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {   
+    .contact-info {
+        font-size: 12px;
+    }
+
+    .btn {
+        padding: 12px 15px;
+        border-radius: 16px;
+        font-size: 13px;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .services, .benefits {
+        padding: 30px 0;
+    }
+
+    .benefit-item {
+        flex-direction: column;
+    }
+
+    footer .container {
+        flex-direction: column;
+    }
+    .footer-section {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+    
+    .footer-nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+    }
+}
+
+/* Адаптив для очень маленьких экранов */
+@media (max-width: 480px) {
+    .btn {
+        display: none;
+    }
+
+    .hero a.btn {
+        font-size: 13px;
+    }
+    
+    .whatsapp-icon {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .main-nav ul {
+        gap: 5px;
+    }
+
+    .contact-info {
+        gap: 5px;
+    }
+}
