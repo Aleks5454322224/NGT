@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Профессиональная газификация частных домов и предприятий в Санкт-Петербурге и Ленинградской области. Полный цикл работ от проекта до ввода в эксплуатацию.">
+    <title>СтройГазСервис | Наши услуги</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/services.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-top">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <a href="index.html">
+                        <img src="img/Logo.png" alt="Логотип">
+                    </a>
+                    <div class="company-info">
+                        <h1>СтройГазСервис</h1>
+                        <p>Газификация домов в Санкт-Петербурге и ЛО</p>
+                    </div>
+                </div>
+
+                <div class="nav-contacts">
+                    <div class="contact-item">
+                        <span><i class="fas fa-phone-alt"></i> <a href="tel:+78121234567">+7 (812) 123-45-67</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span><i class="fas fa-envelope"></i> <a
+                                href="mailto:info@nevastroygaz.ru">info@nevastroygaz.ru</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span><i class="fas fa-clock"></i> Пн-Пт: 9:00-19:00</span>
+                    </div>
+                    <button class="order-button">Заказать консультацию</button>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="services.html">Наши услуги</a></li>
+                    <li><a href="index.html#work-steps">Этапы работ</a></li>
+                    <li><a href="index.html#certificates">Сертификаты</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="services-container">
+        <nav class="services-nav">
+            <h2>Наши услуги</h2>
+            <div class="service-item active" data-service="gazifikaciya">Газификация "под ключ"</div>
+            <div class="service-item" data-service="texnicheskie-usloviya">Технические условия</div>
+            <div class="service-item" data-service="proektirovanie-gaz">Проектирование газопровода</div>
+            <div class="service-item" data-service="stroitelstvo-montazh">Строительство и монтаж газопровода</div>
+            <div class="service-item" data-service="proektirovanie-otoplenie">Проектирование и монтаж систем отопления</div>
+            <div class="service-item" data-service="topografiya">Топографическая съемка</div>
+            <div class="service-item" data-service="gaz-oborudovanie">Продажа и монтаж газового оборудования</div>
+            <div class="service-item" data-service="gnb">Горизонтально-направленное бурение (ГНБ)</div>
+            <button class="cta-button" data-modal="calculator">
+                <span>Открыть калькулятор</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+        </nav>
+        <main class="service-content">
+            <div class="service-header">
+                <h1>Профессиональная газификация объектов</h1>
+                <p>Полный комплекс услуг от проектирования до ввода в эксплуатацию</p>
+                <button class="cta-button-ser">Получить коммерческое предложение</button>
+            </div>
+            <div class="service-details active" id="gazifikaciya">
+                <div class="text-content">
+                    <h3>Газификация "под ключ"</h3>
+                    <p>Полный комплекс работ для обеспечения газоснабжения объекта.</p>
+                    <ul>
+                        <li>Подготовка проектной документации</li>
+                        <li>Согласование с контролирующими органами</li>
+                        <li>Монтаж и подключение газовых сетей</li>
+                        <li>Испытания и ввод в эксплуатацию</li>
+                    </ul>
+                    <div class="price-list">
+                        <h4>Стоимость:</h4>
+                        <p>Частные дома: от 150 000 ₽</p>
+                        <p>Коммерческие объекты: от 500 000 ₽</p>
+                    </div>
+                    <button class="cta-button-ser">Оставить заявку</button>
+                </div>
+                <img src="https://vbashkortostane.gazprom.ru/d/story/08/776/image-19-06-20-10-00.jpg" alt="Газификация" class="service-image">
+            </div>
+            <div class="service-details" id="texnicheskie-usloviya">
+                <div class="text-content">
+                    <h3>Технические условия</h3>
+                    <p>Получение технических условий для подключения газа.</p>
+                    <ul>
+                        <li>Определение технической возможности</li>
+                        <li>Расчёт расхода газа</li>
+                        <li>Оформление документации</li>
+                    </ul>
+                    <div class="price-list">
+                        <h4>Стоимость:</h4>
+                        <p>Физические лица: от 25 000 ₽</p>
+                        <p>Юридические лица: от 45 000 ₽</p>
+                    </div>
+                    <button class="cta-button-ser">Оформить</button>
+                </div>
+                <img src="https://www.uraltest.ru/upload/medialibrary/fe3/0172.jpg" alt="Технические условия" class="service-image">
+            </div>
+            <div class="service-details" id="proektirovanie-gaz">
+                <div class="text-content">
+                    <h3>Проектирование газопровода</h3>
+                    <p>Разработка проектной документации для газоснабжения.</p>
+                    <ul>
+                        <li>Топографическая съемка</li>
+                        <li>Расчёт и чертежи газопровода</li>
+                        <li>Подготовка смет</li>
+                    </ul>
+                    <div class="price-list">
+                        <h4>Стоимость:</h4>
+                        <p>От 50 000 ₽</p>
+                    </div>
+                    <button class="cta-button-ser">Заказать проект</button>
+                </div>
+                <img src="https://divnogorsk-r04.gosweb.gosuslugi.ru/netcat_files/generated/99/159/760x570/1947/8ef1b78ef551488a260b0753c523292c.jpg?crop=0%3A0%3A0%3A0&hash=1783ccb89a18bce98f48aa3ba5fea1b0&resize_mode=0&wm_m=0" alt="Проектирование" class="service-image">
+            </div>
+            <div class="service-details" id="stroitelstvo-montazh">
+                <div class="text-content">
+                    <h3>Строительство и монтаж газопровода</h3>
+                    <p>Полный цикл работ по прокладке газовых сетей.</p>
+                    <ul>
+                        <li>Земляные работы</li>
+                        <li>Монтаж трубопроводов</li>
+                        <li>Пуско-наладочные работы</li>
+                    </ul>
+                    <div class="price-list">
+                        <h4>Стоимость:</h4>
+                        <p>От 100 000 ₽</p>
+                    </div>
+                    <button class="cta-button-ser">Оставить заявку</button>
+                </div>
+                <img src="https://gro60.ru/media/img_3649.jpg" alt="Монтаж" class="service-image">
+            </div>
+            <div class="service-details" id="proektirovanie-otoplenie">
+                <div class="text-content">
+                    <h3>Проектирование и монтаж систем отопления</h3>
+                    <p>Полный комплекс работ для проектирования и монтажа систем отопления.</p>
+                    <ul>
+                        <li>Проектирование системы отопления</li>
+                        <li>Выбор оборудования</li>
+                        <li>Монтаж и подключение</li>
+                        <li>Настройка и тестирование</li>
+                    </ul>
+                    <div class="price-list">
+                        <h4>Стоимость:</h4>
+                        <p>Частные дома: от 200 000 ₽</p>
+                        <p>Коммерческие объекты: от 600 000 ₽</p>
+                    </div>
+                    <button class="cta-button-ser">Оставить заявку</button>
+                </div>
+                <img src="https://berezka-stroi.ru/upload/iblock/f87/4l2r7fa3jq18c8lpe44sowi25w3zp7zp.jpg" alt="Проектирование и монтаж систем отопления" class="service-image">
+            </div>
+            <div class="service-details" id="topografiya">
+                <div class="text-content">
+                    <h3>Топографическая съемка</h3>
+                    <p>Проведение топографической съемки для проектирования и строительства.</p>
+                    <ul>
+                        <li>Измерение рельефа и объектов</li>
+                        <li>Создание топографических карт</li>
+                        <li>Подготовка документации</li>
+                    </ul>
+                    <div class="price-list">
+                        <h4>Стоимость:</h4>
+                        <p>От 30 000 ₽</p>
+                    </div>
+                    <button class="cta-button-ser">Заказать съемку</button>
+                </div>
+                <img src="https://geodez-96.ru/upload/iblock/a41/a41dcbffb71023588f8d26282f4f3c68.jpg" alt="Топографическая съемка" class="service-image">
+            </div>
+            
+            <div class="service-details" id="gaz-oborudovanie">
+                <div class="text-content">
+                    <h3>Продажа и монтаж газового оборудования</h3>
+                    <p>Поставка и установка газового оборудования для частных и коммерческих объектов.</p>
+                    <ul>
+                        <li>Котлы и газовые плиты</li>
+                        <li>Горелки и счетчики</li>
+                        <li>Пуско-наладочные работы</li>
+                    </ul>
+                    <div class="price-list">
+                        <h4>Стоимость:</h4>
+                        <p>Цена зависит от выбранного оборудования</p>
+                    </div>
+                    <button class="cta-button-ser">Заказать оборудование</button>
+                </div>
+                <img src="https://kirov-portal.ru/upload/original/news/736/736fc30c0d24a2cedd57c31f64794c83.jpg" alt="Газовое оборудование" class="service-image">
+            </div>
+            
+            <div class="service-details" id="gnb">
+                <div class="text-content">
+                    <h3>Горизонтально-направленное бурение (ГНБ)</h3>
+                    <p>Безтраншейный метод прокладки коммуникаций.</p>
+                    <ul>
+                        <li>Прокладка труб без вскрытия грунта</li>
+                        <li>Минимальное вмешательство в ландшафт</li>
+                        <li>Работы под дорогами и водоемами</li>
+                    </ul>
+                    <div class="price-list">
+                        <h4>Стоимость:</h4>
+                        <p>От 5 000 ₽ за погонный метр</p>
+                    </div>
+                    <button class="cta-button-ser">Заказать бурение</button>
+                </div>
+                <img src="https://speteh.ru/components/com_djclassifieds/images/item/1/1485_f_5e3337fa41df1_thb.jpg" alt="ГНБ" class="service-image">
+            </div>            
+        </main>
+    </div>    
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="left-column">
+                    <div class="footer-section contacts-section" id="contact">
+                        <h3 class="footer-title">Контакты</h3>
+                        <div class="contact-list">
+                            <div class="contact-item-footer">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <span>Тосно, Ленинградская область, Проспект Ленина 71</span>
+                            </div>
+                            <div class="contact-item-footer">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <a href="tel:+78121234567">+7 (812) 123-45-67</a>
+                            </div>
+                            <div class="contact-item-footer">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <a href="mailto:info@nevastroygaz.ru">info@nevastroygaz.ru</a>
+                            </div>
+                            <div class="contact-item-footer">
+                                <i class="fas fa-clock contact-icon"></i>
+                                <span>Пн-Пт: 9:00–18:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-section social-section">
+                        <h3 class="footer-title">Мы в соцсетях</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                            <a href="https://t.me/gazvdom78" target="_blank" rel="noopener noreferrer"
+                                class="social-link">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section map-section">
+                    <h3 class="footer-title">Мы на карте</h3>
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa99399f7d89b3d33ccfdfc6490406b28e366a84e80f0bad3897a7bd72aeb5ac8&amp;source=constructor"
+                            class="map-iframe" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-info">
+                    <span>© НеваСтройГаз 2024</span>
+                    <span class="divider">|</span>
+                    <span>Лицензия №ЛО-78-123456 от 01.01.2024</span>
+                </div>
+                <nav class="footer-nav">
+                    <a href="legal.html#privacy" class="nav-link-footer">Политика конфиденциальности</a>
+                    <a href="legal.html#policy" class="nav-link-footer">Пользовательское соглашение</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fa fa-times"></i></button>
+            <form class="custom-form modal-form">
+                <div class="form-header">
+                    <h2 class="section-title">Заявка на консультацию</h2>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="modal-name" name="name" required>
+                    <label for="modal-name">Имя</label>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="tel" id="modal-phone" name="phone" required>
+                    <label for="modal-phone">Телефон</label>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="input-group bordered">
+                    <textarea id="modal-comment" name="comment" rows="4"></textarea>
+                    <label for="modal-comment">Комментарий</label>
+                </div>
+
+                <button class="submit-btn" type="submit"><i class="fa fa-paper-plane"></i> Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+    <div id="gasCalculatorModal" class="gas-modal">
+        <div class="gas-modal-content">
+            <span class="gas-modal-close"><i class="fa fa-times"></i></span>
+            <h2 class="section-title">Калькулятор стоимости газификации</h2>
+            <div class="gas-calculator-body">
+                <div class="gas-input-group">
+                    <label for="gasArea">Площадь дома (м²):</label>
+                    <input type="number" id="gasArea" min="50" value="100" class="gas-input">
+                </div>
+
+                <div class="gas-services-list">
+                    <div class="gas-service-item">
+                        <label>
+                            <input type="checkbox" id="gasFullCycle" class="gas-checkbox">
+                            <span class="gas-service-name">Газификация "под ключ"</span>
+                            <span class="gas-service-price">+200 000 ₽</span>
+                        </label>
+                    </div>
+                    <div class="gas-service-item">
+                        <label>
+                            <input type="checkbox" id="gasProjecting" class="gas-checkbox">
+                            <span class="gas-service-name">Проектирование газопровода</span>
+                            <span class="gas-service-price">+50 ₽/м²</span>
+                        </label>
+                    </div>
+                    <div class="gas-service-item">
+                        <label>
+                            <input type="checkbox" id="gasDocumentation" class="gas-checkbox">
+                            <span class="gas-service-name">Получение технических условий</span>
+                            <span class="gas-service-price">+15 000 ₽</span>
+                        </label>
+                    </div>
+                    <div class="gas-service-item">
+                        <label>
+                            <input type="checkbox" id="gasMontage" class="gas-checkbox">
+                            <span class="gas-service-name">Строительство и монтаж</span>
+                            <span class="gas-service-price">+800 ₽/м²</span>
+                        </label>
+                    </div>
+                    <div class="gas-service-item">
+                        <label>
+                            <input type="checkbox" id="gasHeating" class="gas-checkbox">
+                            <span class="gas-service-name">Системы отопления</span>
+                            <span class="gas-service-price">+1 200 ₽/м²</span>
+                        </label>
+                    </div>
+                    <div class="gas-service-item">
+                        <label>
+                            <input type="checkbox" id="gasTopography" class="gas-checkbox">
+                            <span class="gas-service-name">Топографическая съемка</span>
+                            <span class="gas-service-price">+20 000 ₽</span>
+                        </label>
+                    </div>
+                    <div class="gas-service-item">
+                        <label>
+                            <input type="checkbox" id="gasEquipment" class="gas-checkbox">
+                            <span class="gas-service-name">Газовое оборудование</span>
+                            <span class="gas-service-price">+50 000 ₽</span>
+                        </label>
+                    </div>
+                    <div class="gas-service-item">
+                        <label>
+                            <input type="checkbox" id="gasDrilling" class="gas-checkbox">
+                            <span class="gas-service-name">Горизонтальное бурение (ГНБ)</span>
+                            <span class="gas-service-price">+1 500 ₽/м²</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="gas-total">
+                    <h3>Итого:</h3>
+                    <div class="gas-total-price">0 ₽</div>
+                </div>
+                <button class="gas-calculate-button">
+                    <span><i class="fa fa-sync-alt"></i> Пересчитать</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/services.js"></script>
+
+</body>
+
+</html>

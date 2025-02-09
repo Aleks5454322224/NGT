@@ -4,77 +4,742 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Профессиональная газификация частных домов и предприятий в Санкт-Петербурге и Ленинградской области. Полный цикл работ от проекта до ввода в эксплуатацию.">
     <title>СтройГазСервис | Газификация домов СПб и ЛО</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #1A365D;
-            --secondary-color: #2D5F7D;
-            --accent-color: #E63946;
-            --light-bg: #F8F9FA;
-            --text-color: #2D3748;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Nunito", serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-        }
-
-        html,
-        body {
-            height: 100%;
-        }
-
-        .loader-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .loader {
-            border: 12px solid #f3f3f3;
-            border-top: 12px solid var(--accent-color);
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            animation: spin 1.5s linear infinite;
-        }
-
-        .progress-text {
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--text-color);
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
 </head>
 
 <body>
-    <div class="loader-container">
-        <div class="loader"></div>
-        <div class="progress-text">Сайт готов к предрелизу...</div>
+    <nav>
+        <div class="nav-top">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <a href="index.html">
+                        <img src="img/Logo.png" alt="Логотип">
+                    </a>
+                    <div class="company-info">
+                        <h1>СтройГазСервис</h1>
+                        <p>Газификация домов в Санкт-Петербурге и ЛО</p>
+                    </div>
+                </div>
+
+                <div class="nav-contacts">
+                    <div class="contact-item">
+                        <span><i class="fas fa-phone-alt"></i> <a href="tel:+78121234567">+7 (812) 123-45-67</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span><i class="fas fa-envelope"></i> <a
+                                href="mailto:info@nevastroygaz.ru">info@nevastroygaz.ru</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span><i class="fas fa-clock"></i> Пн-Пт: 9:00-19:00</span>
+                    </div>
+                    <button class="order-button">Заказать консультацию</button>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="services.html">Наши услуги</a></li>
+                    <li><a href="#work-steps">Этапы работ</a></li>
+                    <li><a href="#certificates">Сертификаты</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-content-h">
+                    <h1>Полный цикл газификации <br> домов и коммерческих объектов</h1>
+                    <p>Проектирование, согласование, подведение газа и ввод в эксплуатацию. <br> Работы выполняются по
+                        стандартам безопасности с гарантией качества.</p>
+                </div>
+                <ul class="hero-benefits">
+                    <li data-delay="0.2s"><i class="fas fa-check-circle"></i> Официальное оформление документов</li>
+                    <li data-delay="0.4s"><i class="fas fa-fire"></i> Надежное и безопасное подключение</li>
+                    <li data-delay="0.6s"><i class="fas fa-clock"></i> Соблюдение сроков на каждом этапе</li>
+                </ul>
+                <button class="hero-button"><i class="fas fa-comments"></i> Бесплатная консультация</button>
+            </div>
+            <div class="hero-wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="services-container">
+                <div class="floating-badges">
+                    <div class="experience-badge">12+ лет опыта</div>
+                    <div class="projects-badge">500+ проектов</div>
+                </div>
+
+                <h2 class="section-title">Наши услуги</h2>
+
+                <div class="services-filter">
+                    <button class="filter-btn active" data-filter="all">Все услуги</button>
+                    <button class="filter-btn" data-filter="design">Проектирование</button>
+                    <button class="filter-btn" data-filter="build">Монтаж</button>
+                    <button class="filter-btn" data-filter="docs">Документы</button>
+                </div>
+
+                <div class="services-grid">
+                    <div class="services-grid">
+                        <a href="services.html#gazifikaciya" class="service-card" data-category="design">
+                            <i class="fas fa-gas-pump fa-3x"></i>
+                            <h3>Газификация "под ключ"</h3>
+                            <p>Полный комплекс работ от проектирования до ввода в эксплуатацию</p>
+                            <span class="card-link-indicator"><i class="fa fa-arrow-right"></i></span>
+                        </a>
+                        <a href="services.html#texnicheskie-usloviya" class="service-card" data-category="docs">
+                            <i class="fas fa-file-contract fa-3x"></i>
+                            <h3>Получение технических условий</h3>
+                            <p>Оформление и согласование документации в контролирующих органах</p>
+                            <span class="card-link-indicator"><i class="fa fa-arrow-right"></i></span>
+                        </a>
+                        <a href="services.html#proektirovanie-gaz" class="service-card" data-category="design">
+                            <i class="fas fa-drafting-compass fa-3x"></i>
+                            <h3>Проектирование газопровода</h3>
+                            <p>Разработка проектной документации с учетом всех нормативов</p>
+                            <span class="card-link-indicator"><i class="fa fa-arrow-right"></i></span>
+                        </a>
+                        <a href="services.html#stroitelstvo-montazh" class="service-card" data-category="build">
+                            <i class="fas fa-tools fa-3x"></i>
+                            <h3>Строительство и монтаж</h3>
+                            <p>Качественный монтаж трубопроводов любой сложности</p>
+                            <span class="card-link-indicator"><i class="fa fa-arrow-right"></i></span>
+                        </a>
+                        <a href="services.html#proektirovanie-otoplenie" class="service-card" data-category="design">
+                            <i class="fas fa-thermometer-full fa-3x"></i>
+                            <h3>Системы отопления</h3>
+                            <p>Проектирование и установка современных отопительных систем</p>
+                            <span class="card-link-indicator"><i class="fa fa-arrow-right"></i></span>
+                        </a>
+                        <a href="services.html#topografiya" class="service-card" data-category="design">
+                            <i class="fas fa-map-marked-alt fa-3x"></i>
+                            <h3>Топографическая съемка</h3>
+                            <p>Точные геодезические измерения для проектирования</p>
+                            <span class="card-link-indicator"><i class="fa fa-arrow-right"></i></span>
+                        </a>
+                        <a href="services.html#gaz-oborudovanie" class="service-card" data-category="build">
+                            <i class="fas fa-fire-alt fa-3x"></i>
+                            <h3>Газовое оборудование</h3>
+                            <p>Продажа и профессиональный монтаж оборудования</p>
+                            <span class="card-link-indicator"><i class="fa fa-arrow-right"></i></span>
+                        </a>
+                        <a href="services.html#gnb" class="service-card" data-category="build">
+                            <i class="fas fa-digging fa-3x"></i>
+                            <h3>Горизонтальное бурение (ГНБ)</h3>
+                            <p>Бестраншейная прокладка коммуникаций любой сложности</p>
+                            <span class="card-link-indicator"> <i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-us">
+            <div class="container">
+                <!-- Заголовок секции -->
+                <h2 class="section-title">Почему выбирают нас?</h2>
+
+                <div class="combo-grid">
+                    <!-- Проекты -->
+                    <article class="projects-section">
+                        <header class="section-header">
+                            <h3>Реализованные объекты</h3>
+                            <a href="about.html#projects" class="portfolio-link">
+                                Все проекты
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            </a>
+                        </header>
+
+                        <div class="projects-grid">
+                            <!-- Проект 1 -->
+                            <figure class="project-card">
+                                <img src="https://avatars.mds.yandex.net/get-altay/5548986/2a00000183032642d3bde3bde652e48b6bf2/XXL_height"
+                                    alt="Газификация коттеджа в Кудрово" loading="lazy" class="project-image">
+                                <figcaption class="project-details">
+                                    <h4>Коттедж в Кудрово</h4>
+                                    <dl class="project-stats">
+                                        <div class="stat-item">
+                                            <dt><i class="fas fa-ruler-combined"></i> Площадь:</dt>
+                                            <dd>240 м²</dd>
+                                        </div>
+                                        <div class="stat-item">
+                                            <dt><i class="fas fa-clock"></i> Сроки:</dt>
+                                            <dd>27 дней</dd>
+                                        </div>
+                                    </dl>
+                                    <button class="project-button" data-project="1">
+                                        <i class="fas fa-expand"></i>
+                                        Смотреть кейс
+                                    </button>
+                                </figcaption>
+                            </figure>
+
+                            <!-- Проект 2 -->
+                            <figure class="project-card">
+                                <img src="https://stone77.ru/pics/product/big/dcfd6c302c02f4407fdca295e97acb36.jpg"
+                                    alt="Подключение таунхауса к газовой магистрали" loading="lazy"
+                                    class="project-image">
+                                <figcaption class="project-details">
+                                    <h4>Таунхаус в Пушкине</h4>
+                                    <dl class="project-stats">
+                                        <div class="stat-item">
+                                            <dt><i class="fas fa-ruler-combined"></i> Площадь:</dt>
+                                            <dd>180 м²</dd>
+                                        </div>
+                                        <div class="stat-item">
+                                            <dt><i class="fas fa-clock"></i> Сроки:</dt>
+                                            <dd>22 дня</dd>
+                                        </div>
+                                    </dl>
+                                    <button class="project-button" data-project="2">
+                                        <i class="fas fa-expand"></i>
+                                        Смотреть кейс
+                                    </button>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="project-card">
+                                <img src="https://get.wallhere.com/photo/urban-house-evening-resort-cottage-vacation-estate-home-villa-mansion-suburb-facade-residential-area-property-real-estate-log-cabin-landscape-lighting-14921.jpg"
+                                    alt="Монтаж системы отопления в загородном доме" loading="lazy"
+                                    class="project-image">
+                                <figcaption class="project-details">
+                                    <h4>Загородный дом в Ленинградской области</h4>
+                                    <dl class="project-stats">
+                                        <div class="stat-item">
+                                            <dt><i class="fas fa-ruler-combined"></i> Площадь:</dt>
+                                            <dd>300 м²</dd>
+                                        </div>
+                                        <div class="stat-item">
+                                            <dt><i class="fas fa-clock"></i> Сроки:</dt>
+                                            <dd>35 дней</dd>
+                                        </div>
+                                    </dl>
+                                    <button class="project-button" data-project="3">
+                                        <i class="fas fa-expand"></i>
+                                        Смотреть кейс
+                                    </button>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <!-- Преимущества -->
+                    <aside class="benefits-section">
+                        <header class="section-header">
+                            <h3>Наши преимущества</h3>
+                            <div class="rating-badge">
+                                <i class="fas fa-star"></i> 4.9/5
+                                <span class="reviews">(328 отзывов)</span>
+                            </div>
+                        </header>
+
+                        <div class="benefits-grid">
+                            <!-- Преимущество 1 -->
+                            <article class="benefit-card">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h4>Экспертный подход</h4>
+                                <p>Сертифицированные специалисты с опытом работы от 7 лет</p>
+                                <div class="benefit-footer">
+                                    <a href="#certificates" class="benefit-link">
+                                        Посмотреть сертификаты
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Преимущество 2 -->
+                            <article class="benefit-card">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <h4>Прозрачный договор</h4>
+                                <p>Фиксированная стоимость без скрытых платежей</p>
+                                <div class="benefit-footer">
+                                    <a href="#contracts" class="benefit-link">
+                                        Образец договора
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Гарантии -->
+                <div class="guarantees-section">
+                    <h3 class="guarantees-title">Наши гарантии</h3>
+                    <div class="guarantees-grid">
+                        <article class="guarantee-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Безопасность</h4>
+                            <p>Все газифицированные объекты соответствуют требованиям безопасности. Используем только сертифицированное оборудование.</p>
+                        </article>
+                
+                        <article class="guarantee-card">
+                            <i class="fas fa-file-contract"></i>
+                            <h4>Прозрачные условия</h4>
+                            <p>Фиксированные цены в договоре. Никаких скрытых платежей.</p>
+                        </article>
+                
+                        <article class="guarantee-card">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Гарантия на работы</h4>
+                            <p>Гарантия на монтаж газового оборудования – 3 года. Обслуживание и поддержка после завершения работ.</p>
+                        </article>
+                
+                        <article class="guarantee-card">
+                            <i class="fas fa-lock"></i>
+                            <h4>Конфиденциальность</h4>
+                            <p>Ваши персональные данные под надежной защитой. Не передаем информацию третьим лицам.</p>
+                        </article>
+                    </div>
+                </div>                               
+            </div>
+        </section>
+
+        <section class="section-divider">
+            <div class="divider-inner">
+                <!-- CTA блок -->
+                <div class="cta-block">
+                    <div class="cta-card">
+                        <div class="cta-content">
+                            <h4><i class="fas fa-calculator" aria-hidden="true"></i> Рассчитайте стоимость газификации
+                                онлайн</h4>
+                            <button class="cta-button" data-modal="calculator">
+                                <span>Открыть калькулятор</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Модальное окно калькулятора -->
+        <div id="gasCalculatorModal" class="gas-modal">
+            <div class="gas-modal-content">
+                <span class="gas-modal-close"><i class="fa fa-times"></i></span>
+                <h2 class="section-title">Калькулятор стоимости газификации</h2>
+                <div class="gas-calculator-body">
+                    <div class="gas-input-group">
+                        <label for="gasArea">Площадь дома (м²):</label>
+                        <input type="number" id="gasArea" min="50" value="100" class="gas-input">
+                    </div>
+
+                    <div class="gas-services-list">
+                        <div class="gas-service-item">
+                            <label>
+                                <input type="checkbox" id="gasFullCycle" class="gas-checkbox">
+                                <span class="gas-service-name">Газификация "под ключ"</span>
+                                <span class="gas-service-price">+200 000 ₽</span>
+                            </label>
+                        </div>
+                        <div class="gas-service-item">
+                            <label>
+                                <input type="checkbox" id="gasProjecting" class="gas-checkbox">
+                                <span class="gas-service-name">Проектирование газопровода</span>
+                                <span class="gas-service-price">+50 ₽/м²</span>
+                            </label>
+                        </div>
+                        <div class="gas-service-item">
+                            <label>
+                                <input type="checkbox" id="gasDocumentation" class="gas-checkbox">
+                                <span class="gas-service-name">Получение технических условий</span>
+                                <span class="gas-service-price">+15 000 ₽</span>
+                            </label>
+                        </div>
+                        <div class="gas-service-item">
+                            <label>
+                                <input type="checkbox" id="gasMontage" class="gas-checkbox">
+                                <span class="gas-service-name">Строительство и монтаж</span>
+                                <span class="gas-service-price">+800 ₽/м²</span>
+                            </label>
+                        </div>
+                        <div class="gas-service-item">
+                            <label>
+                                <input type="checkbox" id="gasHeating" class="gas-checkbox">
+                                <span class="gas-service-name">Системы отопления</span>
+                                <span class="gas-service-price">+1 200 ₽/м²</span>
+                            </label>
+                        </div>
+                        <div class="gas-service-item">
+                            <label>
+                                <input type="checkbox" id="gasTopography" class="gas-checkbox">
+                                <span class="gas-service-name">Топографическая съемка</span>
+                                <span class="gas-service-price">+20 000 ₽</span>
+                            </label>
+                        </div>
+                        <div class="gas-service-item">
+                            <label>
+                                <input type="checkbox" id="gasEquipment" class="gas-checkbox">
+                                <span class="gas-service-name">Газовое оборудование</span>
+                                <span class="gas-service-price">+50 000 ₽</span>
+                            </label>
+                        </div>
+                        <div class="gas-service-item">
+                            <label>
+                                <input type="checkbox" id="gasDrilling" class="gas-checkbox">
+                                <span class="gas-service-name">Горизонтальное бурение (ГНБ)</span>
+                                <span class="gas-service-price">+1 500 ₽/м²</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="gas-total">
+                        <h3>Итого:</h3>
+                        <div class="gas-total-price">0 ₽</div>
+                    </div>
+                    <button class="gas-calculate-button">
+                        <span><i class="fa fa-sync-alt"></i> Пересчитать</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section class="work-steps">
+            <div class="container">
+                <h2 class="section-title animate-slide" id="work-steps">Этапы работ</h2>
+
+                <div class="steps-wrapper">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-handshake fa-3x"></i>
+                            <div class="pulse-effect"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-number">01</span>
+                            <h3>Консультация</h3>
+                            <p>Обсуждение проекта, анализ объекта и составление ТЗ</p>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-drafting-compass fa-3x"></i>
+                            <div class="pulse-effect"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-number">02</span>
+                            <h3>Проектирование</h3>
+                            <p>Разработка 3D-модели объекта с учетом всех нормативов</p>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-file-invoice-dollar fa-3x"></i>
+                            <div class="pulse-effect"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-number">03</span>
+                            <h3>Согласование</h3>
+                            <p>Оформление и получение разрешительной документации</p>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-truck-loading fa-3x"></i>
+                            <div class="pulse-effect"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-number">04</span>
+                            <h3>Логистика</h3>
+                            <p>Доставка материалов и оборудования на объект</p>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-tools fa-3x"></i>
+                            <div class="pulse-effect"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-number">05</span>
+                            <h3>Монтаж</h3>
+                            <p>Качественная установка систем с соблюдением сроков</p>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-check fa-3x"></i>
+                            <div class="pulse-effect"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-number">06</span>
+                            <h3>Тестирование</h3>
+                            <p>Проверка работоспособности всех систем под нагрузкой</p>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-home fa-3x"></i>
+                            <div class="pulse-effect"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-number">07</span>
+                            <h3>Сдача объекта</h3>
+                            <p>Подписание актов и гарантийные обязательства</p>
+                        </div>
+                        <div class="step-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="certificates-section">
+            <h2 class="section-title">Наши сертификаты и договоры</h2>
+
+            <div class="certificates-container" id="certificates">
+                <div class="certificates-scroller">
+                    <div class="certificate-item" data-index="0">
+                        <img src="https://a228.ru/upload/iblock/0e6/0e6b7e6aab9437b29f280ca762e81d61.jpg"
+                            alt="Сертификат 1" class="certificate-image">
+                        <div class="certificate-label">Сертификат 1</div>
+                    </div>
+                    <div class="certificate-item" data-index="1">
+                        <img src="https://a228.ru/upload/iblock/0e6/0e6b7e6aab9437b29f280ca762e81d61.jpg"
+                            alt="Сертификат 2" class="certificate-image">
+                        <div class="certificate-label">Сертификат 2</div>
+                    </div>
+                    <div class="certificate-item" data-index="2">
+                        <img src="https://a228.ru/upload/iblock/0e6/0e6b7e6aab9437b29f280ca762e81d61.jpg"
+                            alt="Сертификат 3" class="certificate-image">
+                        <div class="certificate-label">Сертификат 3</div>
+                    </div>
+                    <div class="certificate-item" data-index="3">
+                        <img src="https://a228.ru/upload/iblock/0e6/0e6b7e6aab9437b29f280ca762e81d61.jpg"
+                            alt="Сертификат 4" class="certificate-image">
+                        <div class="certificate-label">Сертификат 4</div>
+                    </div>
+                </div>
+                <div class="custom-scrollbar">
+                    <div class="scroll-progress"></div>
+                </div>
+                <button class="nav-btn prev-btn" aria-label="Previous">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+                    </svg>
+                </button>
+                <button class="nav-btn next-btn" aria-label="Next">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="contracts-container" id="contracts">
+                <div class="contracts-scroller">
+                    <div class="contract-item" data-index="0">
+                        <img src="https://a228.ru/upload/iblock/0e6/0e6b7e6aab9437b29f280ca762e81d61.jpg"
+                            alt="Договор 1" class="contract-image">
+                        <div class="contract-label">Договор с партнером A</div>
+                    </div>
+                    <div class="contract-item" data-index="1">
+                        <img src="https://a228.ru/upload/iblock/0e6/0e6b7e6aab9437b29f280ca762e81d61.jpg"
+                            alt="Договор 2" class="contract-image">
+                        <div class="contract-label">Договор с партнером B</div>
+                    </div>
+                    <div class="contract-item" data-index="2">
+                        <img src="https://a228.ru/upload/iblock/0e6/0e6b7e6aab9437b29f280ca762e81d61.jpg"
+                            alt="Договор 3" class="contract-image">
+                        <div class="contract-label">Договор с партнером C</div>
+                    </div>
+                    <div class="contract-item" data-index="3">
+                        <img src="https://a228.ru/upload/iblock/0e6/0e6b7e6aab9437b29f280ca762e81d61.jpg"
+                            alt="Договор 4" class="contract-image">
+                        <div class="contract-label">Договор с партнером D</div>
+                    </div>
+                </div>
+                <div class="custom-scrollbar">
+                    <div class="scroll-progress"></div>
+                </div>
+                <button class="nav-btn prev-btn" aria-label="Previous">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+                    </svg>
+                </button>
+                <button class="nav-btn next-btn" aria-label="Next">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <div class="certificates-modal">
+            <div class="certificates-modal-overlay"></div>
+            <div class="certificates-modal-content">
+                <div class="modal-controls">
+                    <button class="zoom-in"><i class="fa fa-search-plus"></i></button>
+                    <button class="zoom-out"><i class="fa fa-search-minus"></i></button>
+                </div>
+                <div class="modal-image-wrapper">
+                    <img src="" alt="" class="certificates-modal-image">
+                </div>
+                <button class="certificates-modal-close"><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+
+        <section class="consultation-form">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Заказать консультацию</h2>
+                    <p class="form-subtitle">Оставьте заявку и наш специалист свяжется с вами в течение 15 минут</p>
+                </div>
+
+                <form class="custom-form">
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Ваше имя</label>
+                        <div class="underline"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="tel" id="phone" name="phone" required>
+                        <label for="phone">Номер телефона</label>
+                        <div class="underline"></div>
+                    </div>
+
+                    <div class="input-group bordered">
+                        <textarea id="comment" name="comment" rows="4"></textarea>
+                        <label for="comment">Ваш вопрос или комментарий</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fa fa-paper-plane"></i> Отправить заявку
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="left-column">
+                        <div class="footer-section contacts-section" id="contact">
+                            <h3 class="footer-title">Контакты</h3>
+                            <div class="contact-list">
+                                <div class="contact-item-footer">
+                                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                                    <span>Тосно, Ленинградская область, Проспект Ленина 71</span>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fas fa-phone contact-icon"></i>
+                                    <a href="tel:+78121234567">+7 (812) 123-45-67</a>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fas fa-envelope contact-icon"></i>
+                                    <a href="mailto:info@nevastroygaz.ru">info@nevastroygaz.ru</a>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fas fa-clock contact-icon"></i>
+                                    <span>Пн-Пт: 9:00–18:00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-section social-section">
+                            <h3 class="footer-title">Мы в соцсетях</h3>
+                            <div class="social-links">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <i class="fab fa-vk"></i>
+                                </a>
+                                <a href="https://t.me/gazvdom78" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-section map-section">
+                        <h3 class="footer-title">Мы на карте</h3>
+                        <div class="map-wrapper">
+                            <iframe
+                                src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa99399f7d89b3d33ccfdfc6490406b28e366a84e80f0bad3897a7bd72aeb5ac8&amp;source=constructor"
+                                class="map-iframe" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="legal-info">
+                        <span>© НеваСтройГаз 2024</span>
+                        <span class="divider">|</span>
+                        <span>Лицензия №ЛО-78-123456 от 01.01.2024</span>
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="legal.html#privacy" class="nav-link-footer">Политика конфиденциальности</a>
+                        <a href="legal.html#policy" class="nav-link-footer">Пользовательское соглашение</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fa fa-times"></i></button>
+            <form class="custom-form modal-form">
+                <div class="form-header">
+                    <h2 class="section-title">Заявка на консультацию</h2>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="modal-name" name="name" required>
+                    <label for="modal-name">Имя</label>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="tel" id="modal-phone" name="phone" required>
+                    <label for="modal-phone">Телефон</label>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="input-group bordered">
+                    <textarea id="modal-comment" name="comment" rows="4"></textarea>
+                    <label for="modal-comment">Комментарий</label>
+                </div>
+
+                <button class="submit-btn" type="submit"><i class="fa fa-paper-plane"></i> Отправить заявку</button>
+            </form>
+        </div>
     </div>
+
+    <button class="back-to-top" aria-label="Наверх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <div class="warning-message">
+        <p>Сайт на данный момент не работает с устройствами такими как смартфоны, планшеты, ноутбуки с экраном до 13
+            дюймов. Просим вас использовать другие устройства для проверки сайта.</p>
+    </div>
+
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>
