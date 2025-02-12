@@ -27,10 +27,6 @@
     cursor: pointer;
 }
 
-.section-title {
-    color: var( --primary-color);
-}
-
 .section-subtitle {
     margin-bottom: 15px;
 }
@@ -331,14 +327,6 @@ blockquote {
     padding: 4rem 1.5rem;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 3rem;
-    animation: fadeInUp 1s ease-out;
-}
-
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -374,7 +362,7 @@ blockquote {
 }
 
 .project-card:hover .project-image {
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .project-content {
@@ -393,22 +381,10 @@ blockquote {
     opacity: 0.9;
 }
 
-/* Анимации */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 @keyframes zoomIn {
     from {
         opacity: 0;
-        transform: scale(0.95);
+        transform: scale(0.99);
     }
     to {
         opacity: 1;

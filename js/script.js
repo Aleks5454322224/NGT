@@ -617,23 +617,3 @@ document.querySelector('.gas-calculate-button').addEventListener('click', calcul
 
 // Первоначальный расчет
 calculateGasCost();
-
-function checkScreenWidth() {
-    const screenWidth = window.innerWidth;
-
-    if (screenWidth < 1200) {
-        // Если ширина экрана меньше 1200px, показываем сообщение и скрываем основной контент
-        document.querySelector('.warning-message').style.display = 'flex';
-        document.querySelector('main').style.opacity = '0'; // скрываем основной контент
-    } else {
-        // Если ширина экрана больше 1200px, скрываем сообщение и показываем основной контент
-        document.querySelector('.warning-message').style.display = 'none';
-        document.querySelector('main').style.opacity = '1'; // восстанавливаем основной контент
-    }
-}
-
-// Запускаем проверку при загрузке страницы
-window.addEventListener('load', checkScreenWidth);
-
-// Запускаем проверку при изменении размера окна
-window.addEventListener('resize', checkScreenWidth);
