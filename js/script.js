@@ -27,7 +27,46 @@ if (scrollElement) {
     });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Находим все карточки этапов
+    const cards = document.querySelectorAll('.step-card');
+
+    // Опции для наблюдателя: срабатываем, когда хотя бы 10% элемента видно
+    const observerOptions = {
+        root: null, // наблюдаем за видимой областью окна браузера
+        threshold: 0.1
+    };
+
+    // Создаём новый IntersectionObserver
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Добавляем класс, который запускает анимацию
+                entry.target.classList.add('visible');
+                // Если анимация нужна только один раз, можно прекратить наблюдение за этим элементом
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Запускаем наблюдение для каждой карточки
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".project-button").forEach(button => {
+        button.addEventListener("click", function () {
+            window.location.href = "about.html#projects";
+        });
+    });
+});
+
+// Обработка формы
 document.addEventListener('DOMContentLoaded', () => {
+    emailjs.init('_eTkVNmzmuw19EQAw');
+    
     // Инициализация масок для всех телефонов
     document.querySelectorAll('input[type="tel"]').forEach(input => {
         IMask(input, { mask: '+{7} (000) 000-00-00' });
@@ -37,21 +76,28 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.order-button').addEventListener('click', () => {
         const modal = document.querySelector('.modal-overlay');
         modal.classList.add('active');
+        
+        // Блокировка скролла
         document.body.classList.add('modal-open');
         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
         document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
     });
 
+    // Исправленный обработчик для кнопки закрытия
     document.querySelector('.modal-close').addEventListener('click', closeModal);
+
+    // Обработчик для закрытия по клику вне модального окна
     document.querySelector('.modal-overlay').addEventListener('click', (e) => {
         if (e.target === document.querySelector('.modal-overlay')) {
             closeModal();
         }
     });
-
+    
     function closeModal() {
         const modal = document.querySelector('.modal-overlay');
         modal.classList.remove('active');
+        
+        // Разблокировка скролла
         document.body.classList.remove('modal-open');
         document.documentElement.style.removeProperty('--scrollbar-width');
     }
@@ -66,12 +112,14 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Отправка...';
 
+            // Получаем элементы через текущую форму
             const formData = {
                 name: form.querySelector('[name="name"]').value.trim(),
                 phone: form.querySelector('[name="phone"]').value.trim(),
                 comment: form.querySelector('[name="comment"]')?.value.trim() || ''
             };
 
+            // Валидация
             let errorMessage = '';
             if (!formData.name || !formData.phone) {
                 errorMessage = 'Пожалуйста, заполните обязательные поля';
@@ -87,11 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
-                await sendEmail(formData);
+                await emailjs.send('service_k9b2wqv', 'template_6s8vtby', formData);
                 await sendToTelegram(formData);
+                
                 showMessage('Заявка отправлена! Мы свяжемся с вами в течение 15 минут', 'success');
                 form.reset();
-                if (form.closest('.modal-overlay')) closeModal();
+                if(form.closest('.modal-overlay')) closeModal();
             } catch (error) {
                 console.error('Ошибка:', error);
                 showMessage('Произошла ошибка при отправке. Попробуйте еще раз', 'error');
@@ -107,18 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return nameRegex.test(name);
     }
 
-    async function sendEmail(data) {
-        const response = await fetch('send_email.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (!response.ok) throw new Error('Ошибка отправки письма');
-    }
-
     async function sendToTelegram(data) {
         const botToken = '7506889056:AAFZbHuSiDC4tcdWMAxEgymeXxxhYFk4ZVs';
         const chatId = '-4667658515';
@@ -126,8 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chat_id: chatId, text: text })
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: text
+            })
         });
 
         if (!response.ok) throw new Error('Ошибка отправки в Telegram');
@@ -139,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const message = document.createElement('div');
         message.className = `global-message ${type}`;
+
         message.innerHTML = `
             <div class="message-body">
                 <div class="message-icon"></div>
@@ -152,14 +195,18 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         document.body.appendChild(message);
+
+        // Анимация прогресс-бара
         const progressBar = message.querySelector('.progress-bar');
         progressBar.style.animation = 'progress 5s linear forwards';
 
+        // Закрытие по таймеру
         setTimeout(() => {
             message.classList.add('hide');
             setTimeout(() => message.remove(), 500);
         }, 4800);
 
+        // Закрытие по клику
         message.querySelector('.message-close').addEventListener('click', () => {
             message.classList.add('hide');
             setTimeout(() => message.remove(), 500);
